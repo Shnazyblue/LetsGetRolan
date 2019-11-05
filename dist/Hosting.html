@@ -65,7 +65,7 @@
           This is an explanation of how this webpage is hosted. It is running on
           a Raspberry pie through a Cisco ASA and uses dynamic DNS through
           google. This is a long tutorial and some parts will have links to
-          Youtube tutorials that I followed in order to get this to work. I
+          YouTube tutorials that I followed in order to get this to work. I
           apologize in advance if some parts may be missing, unclear or if the
           relevant information has changed over time. If you have any questions,
           feel free to contact me in the "How to reach me" section.
@@ -75,7 +75,7 @@
         <h2 class="text-secondary">Disclaimer</h2>
         <p>
           This is a short explanation of how I created this website using
-          tutorials over multiple Youtube videos and knowledge acquired from
+          tutorials over multiple YouTube videos and knowledge acquired from
           studying for my CCNA Exams. Be aware that there are risks when
           allowing people to access any device on your network from the
           internet. I am not responsible/liable for anything that may happen to
@@ -112,8 +112,8 @@
       <div class="Setting up your Pi">
         <h2 class="text-secondary">Setting up your Raspberry Pi.</h2>
         <p>
-          There are many tutorials across Youtube which will show you how to
-          set up an OS on your Raspberry Pi. At the time of writing this I am
+          There are many tutorials across YouTube which will show you how to set
+          up an OS on your Raspberry Pi. At the time of writing this I am
           currently using "Raspbian Buster with desktop". If you are more
           familiar with Linux command line interface, I recommend you use the
           "Lite" version because it is less resource intensive on your device.
@@ -153,12 +153,12 @@
         <img src="img/ASAsetup/ASAsetup4.JPG" alt="John Doe" />
         <p>
           Next, we will want to configure VLAN 1 for the inside with a security
-          level of 100 and an ip address. In this case I used 10.0.0.0/24
+          level of 100 and an IP address. In this case I used 10.0.0.0/24
         </p>
         <img src="img/ASAsetup/ASAsetup5.JPG" alt="John Doe" />
         <p>
           To communicate with the ASDM we need to enable http services and then
-          let the ASA know which IP addresses are can have ASDM sessions.
+          let the ASA know which IP addresses can have ASDM sessions.
         </p>
         <img src="img/ASAsetup/ASAsetup6.JPG" alt="John Doe" />
         <p>
@@ -176,13 +176,13 @@
         </p>
         <img src="img/ASAsetup/ASAsetup7.JPG" alt="John Doe" />
         <p>
-          From here you can then download and install Cisco`s ASDM which will let
-          you control the ASA through a GUI. (The version of your ASDM will
+          From here you can then download and install Cisco`s ASDM which will
+          let you control the ASA through a GUI. (The version of your ASDM will
           depends on what comes preloaded with your ASA). You will need java
           downloaded to run the ASA. Before we can launch and run the ASDM we
-          must download a copy of the ASAs digital certificate to put into
-          java or else it will not launch. (Downloading the certificate will
-          vary depending on what browser you use). Once you have downloaded the
+          must download a copy of the ASAs digital certificate to put into java
+          or else it will not launch. (Downloading the certificate will vary
+          depending on what browser you use). Once you have downloaded the
           digital certificate search “configure java” and go to the security
           tab. From here edit the site list and put in the IP of the ASA which
           you used to connect and download the ASDM.
@@ -221,26 +221,25 @@
           to use to connect to the internet and you will want to give it a name.
           For the security level we will set it to 0 but you can set it to any
           number 0-100 so long as it is a lower level than all your other ports.
-          By default, traffic from your interfaces can travel from a
-          higher level to a lower level but lower levels can travel to higher
-          levels unless you specifically put in an access list for it. You will
-          want to make sure to check off the "enable interface" box to make sure
-          it's on and bellow where it says, "IP Address" will want to select
-          "Obtain Address via DHCP". Since my ASA is hooked directly to the
-          cable modem, I receive a public assigned DHCP address from my service
-          provider. (Note: You might have to reset your modem.) Check off Use
-          "Cisco", "Obtain default route using DHCP", and set the "DHCP learned
-          route Metric" to 1. Once you have done those steps you can select
-          "Okay".
+          By default, traffic from your interfaces can travel from a higher
+          level to a lower level but lower levels can travel to higher levels
+          unless you specifically put in an access list for it. You will want to
+          make sure to check off the "enable interface" box to make sure it's on
+          and bellow where it says, "IP Address" will want to select "Obtain
+          Address via DHCP". Since my ASA is hooked directly to the cable modem,
+          I receive a public assigned DHCP address from my service provider.
+          (Note: You might have to reset your modem.) Check off Use "Cisco",
+          "Obtain default route using DHCP", and set the "DHCP learned route
+          Metric" to 1. Once you have done those steps you can select "Okay".
         </p>
         <img src="img/Interface/int_conf2.JPG" alt="John Doe" />
         <p>
           The next interface will setup is the interface we will use for our
           raspberry pie/web server. For the first half we will set it up the
-          like the way we set up the outside interface but instead of
-          checking off "obtain address via DHCP" we will check off "use static
-          IP". You will then assign an IP address (One from the range of private
-          IPs), set your subnet mask and click ok.
+          like the way we set up the outside interface but instead of checking
+          off "obtain address via DHCP" we will check off "use static IP". You
+          will then assign an IP address (One from the range of private IPs),
+          set your subnet mask and click ok.
         </p>
         <img src="img/Interface/int_conf3.JPG" alt="John Doe" />
         <p>
@@ -252,7 +251,7 @@
       <div class="Setting up Static IP on your Pie">
         <h2 class="text-secondary">Static IP for your Pie</h2>
         <p>
-          This was the Youtube tutorial I used in order to setup a static IP on
+          This was the YouTube tutorial I used in order to setup a static IP on
           my Raspberry pie using the command line interface. You will want to
           make sure you set the IP to a host that resides in the subnet of your
           DMZ and set the default gateway of the IP for this interface too.
@@ -312,7 +311,7 @@
         <img src="img/In_out/In_out2.JPG" alt="John Doe" />
         <p>
           From here you will give the Network Object a name and change the type
-          to “Network. You will want to use the ip address and mask of the
+          to “Network. You will want to use the IP address and mask of the
           inside interface. The description is optional but recommended. In the
           lower section you will want to change the type to “Dynamic PAT (Hide)
           and set the translated address to the outside interface.
@@ -383,12 +382,13 @@
         <p>
           This is a bare minimum on how to host a website on a raspberry pie
           through an ASA. There is always more you can do like adding an IPS
-          module (Highly recommend) for increased security or a syslog server for
-          logging network network access and other events. You can also try out
-          other things like creating a radius or LDAP server on a pie for remote
-          access to things like a NAS setup. Try different things and keep on
-          rolan
+          module (Highly recommend) for increased security or a syslog server
+          for logging network access and other events. You can also try out
+          other things like creating a radius or LDAP server on a pie for when
+          you use remote access to things like a NAS setup. Try different things
+          and keep on rolan
         </p>
+        <img src="img/ips.jpg" alt="John doe" />
       </div>
     </main>
 
